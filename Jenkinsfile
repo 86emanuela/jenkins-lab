@@ -1,9 +1,19 @@
 pipeline{
   agent any
   stages{
-    stage('prova'){
+    stage('check'){
       steps{
-        sh 'echo prova da git'
+        sh 'ls -l'
+      }
+    }
+    stage('run'){
+      steps{
+        sh '/bin/bash script.sh'
+      }
+    }
+    stage('result'){
+      steps{
+        sh 'ls -l'
       }
     }
   }
